@@ -11,18 +11,30 @@ reto
 
 ## Acerca
 en  el  presente repositorio se encuentra la información ejercicio desarrollado teniendo en cuenta lo  siguiente:
-- Genere un plan de pruebas con una estrategia de automatización acorde a la documentacion  recibida.
-- Suba el resultado a un repositorio de código fuente privado como GitHub; GitLab; etc.
-- Use Java como lenguaje de automatización.
-- Use solo POM como patrón de automatización.
-- Realice la automatización.
-- Use Cucumber en el proceso de automatización.
-- Use un gestor de logs como por ejemplo log4j.
-- Implemente Programación Orientada a Objetos.
-- Recuerde que las automatizaciones deben ser independientes unas de otras, es decir, los escenario no pueden tener dependencias unos de otros. Las automatizaciones siempre deben ser repetibles.
-- Es necesario verificar el funcionamiento de algunos módulos para la página web https://magento.softwaretestingboard.com/
+El reto consiste en automatizar los siguientes escenarios dentro del aplicativo,
+realizando diferentes validaciones al proceso de pruebas:  
+- Creación de cuenta y pruebas a login (escenarios exitosos y fallidos)  
+- Adición de diferentes productos de 3 categorías diferentes y validar la adición al
+carro de compras  
+- Dentro de la categoría “Gear/Fitness Equipement” realizar un filtro por  
+  Actividad = ”Gym”  
+  Genero = ”unisex”  
+  Y seleccionar 4 productos luego de aplicar los filtros  
+- Agregar 2 productos de la categoría “Women” y 2 de la categoría “Men” y
+realizar la compra de todos los productos.  
+- Agregar y eliminar productos del carro de compras   
 
+Se utilizará la siguiente url: https://magento.softwaretestingboard.com/ 
 
+Realizar las validaciones que consideres necesarias para cada escenario, generar los
+casos de prueba en gherkin y aplicar el patrón POM para la automatización. 
+
+> Condiciones:  
+- Crear un repositorio y generar ramas para cada funcionalidad (dividir escenarios
+entre el equipo)  
+- Por favor solo versione los archivos necesarios.  
+- Generar un Readme con el stack tecnológico utilizado y con la explicación para
+realizar la ejecución del proyecto  
 
 ## IDE
 
@@ -34,8 +46,8 @@ Gradle.
 Cucumber.   
 log4j.   
 Selenium.   
-Java Faker 
-
+Java Faker.  
+chrome driver.
 
 
 ## Status
@@ -48,5 +60,5 @@ Java Faker
 
 > Descargar el  proyecto.  
 > Ejecutar la opción  build project.  
-> ir a la carpeta "test"
+> ir a la carpeta "test".  
 > hacer clic derecho  y  usar la opcion "Run All Test"

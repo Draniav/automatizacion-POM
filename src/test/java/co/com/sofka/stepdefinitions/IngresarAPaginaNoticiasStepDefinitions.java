@@ -20,8 +20,6 @@ public class IngresarAPaginaNoticiasStepDefinitions extends WebUI {
     @Dado("que el cliente entre a la pagina web")
     public void queElClienteEntreALaPaginaWeb() {
 
-
-
         try {
             generalSetup();
             setUpLog4j2();
