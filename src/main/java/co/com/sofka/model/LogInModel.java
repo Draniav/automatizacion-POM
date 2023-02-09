@@ -4,7 +4,7 @@ package co.com.sofka.model;
 public class LogInModel {
 
     private String email;
-    private String clave;
+    private String password;
 
     public String getEmail() {
         return email;
@@ -14,11 +14,11 @@ public class LogInModel {
         this.email = email;
     }
 
-    public String getClave() {
-        return clave;
+    public String getPassword() {
+        return password;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

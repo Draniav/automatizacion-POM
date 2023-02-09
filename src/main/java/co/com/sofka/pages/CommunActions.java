@@ -1,15 +1,16 @@
 package co.com.sofka.pages;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 public class CommunActions {
 
@@ -30,6 +31,8 @@ public class CommunActions {
             LOGGER.warn(e.getMessage(), e);
         }
     }
+
+
 
     public WebElement waiElement(By locator){
         WebDriverWait wait = new WebDriverWait(webDriver,10);
@@ -89,6 +92,28 @@ public class CommunActions {
             LOGGER.warn(e.getMessage(), e);
             return "";
         }
+    }
+
+    protected void typeOnTextField(WebElement element, String value) {
+        try {
+            element.clear();
+            element.sendKeys(value);
+        } catch (Exception e) {
+            LOGGER.warn(e.getMessage(), e);
+        }
+    }
+
+    protected WebElement waitElement(By locator){
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(webDriver)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofMillis(500))
+                .ignoring(NoSuchElementException.class);
+
+        return  wait.until(new Function<WebDriver, WebElement>() {
+            public WebElement apply(WebDriver driver) {
+                return driver.findElement(locator);
+            }
+        });
     }
 
 }

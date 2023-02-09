@@ -1,5 +1,6 @@
 package co.com.sofka.stepdefinitions;
 
+import co.com.sofka.model.LogInModel;
 import co.com.sofka.pages.homepage.HomePage;
 import co.com.sofka.pages.login.LoginPage;
 import co.com.sofka.pages.news.NewsPage;
@@ -15,8 +16,6 @@ public class LoginStepDefinitions extends WebUI {
 
 
     private static HomePage homePage;
-    private static NewsPage newsPage;
-
     private static LoginPage loginPage;
 
 
@@ -43,22 +42,28 @@ public class LoginStepDefinitions extends WebUI {
         }
 
 
-
     }
 
-    @Y("diligencie el formulario con  los datos correctos")
-    public void diligencieElFormularioConLosDatosCorrectos() {
-
-
-    }
-
-
-    @Entonces("vera un  mensaje de error por inactivadad en la cuenta")
-    public void veraUnMensajeDeErrorPorInactivadadEnLaCuenta() {
+    @Y("envie el formulario vacio")
+    public void envieElFormularioVacio() {
 
         try {
 
-           // Assertions.assertEquals("What's New",newsPage.getTitle());
+            loginPage.clicSignInBtn();
+
+
+        } catch (Exception exception) {
+            errorManagement(exception);
+        }
+    }
+
+
+    @Entonces("vera un  mensaje de error")
+    public void veraUnMensajeDeError() {
+
+        try {
+
+            Assertions.assertEquals("This is a required field.", loginPage.getError());
 
             quiteDriver();
 
@@ -70,5 +75,24 @@ public class LoginStepDefinitions extends WebUI {
     }
 
 
+    @Y("envie el formulario :  {string} y la contraseña: {string}")
+    public void envieElFormularioYLaContraseña(String email, String password) {
+        try {
+            loginPage = homePage.openSignInForm();
+            loginPage.signIn(email, password);
+        } catch (Exception exception) {
+            errorManagement(exception);
+        }
+    }
 
+    @Entonces("vera un  mensaje de: {string}")
+    public void veraUnMensajeDe(String message) {
+        try {
+            System.out.println(loginPage.getUser());
+            Assertions.assertTrue(loginPage.getUser().contains(message));
+            quiteDriver();
+        } catch (Exception exception) {
+            errorManagement(exception);
+        }
+    }
 }

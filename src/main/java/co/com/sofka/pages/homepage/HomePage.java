@@ -19,14 +19,8 @@ public class HomePage extends CommunActions {
 
 
 
-    protected void initElement(WebDriver driver, Object page) {
-        PageFactory.initElements(driver, page);
-    }
-
-
-    public HomePage(WebDriver driver, Integer waitingTime) {
+      public HomePage(WebDriver driver, Integer waitingTime) {
         super(driver, waitingTime);
-        initElement(driver, this);
     }
 
 

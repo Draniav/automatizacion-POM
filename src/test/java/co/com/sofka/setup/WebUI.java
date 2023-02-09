@@ -4,8 +4,16 @@ package co.com.sofka.setup;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+
+import java.time.Duration;
+import java.util.function.Function;
 
 import static co.com.sofka.util.Log4jValues.LOG4J_PROPERTIES_FILE_PATH;
 import static com.google.common.base.StandardSystemProperty.USER_DIR;
@@ -53,6 +61,8 @@ public class WebUI {
         LOGGER.error(exception.getMessage(), exception);
         quiteDriver();
     }
+
+
 
 
 }

@@ -15,16 +15,10 @@ private By title =  By.xpath("//*[@id=\"page-title-heading\"]/span");
 
 
 
-
-
     public NewsPage(WebDriver driver, Integer waitingTime) {
         super(driver, waitingTime);
-        initElement(driver, this);
     }
 
-    protected void initElement(WebDriver driver, Object page) {
-        PageFactory.initElements(driver, page);
-    }
 
 
     public String getTitle(){
