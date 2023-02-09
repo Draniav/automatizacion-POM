@@ -1,15 +1,13 @@
 package co.com.sofka.stepdefinitions;
 
-import co.com.sofka.model.LogInModel;
-import co.com.sofka.pages.homepage.HomePage;
+
+import co.com.sofka.pages.home.HomePage;
 import co.com.sofka.pages.login.LoginPage;
-import co.com.sofka.pages.news.NewsPage;
 import co.com.sofka.setup.WebUI;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
-import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 
 public class LoginStepDefinitions extends WebUI {
@@ -95,4 +93,7 @@ public class LoginStepDefinitions extends WebUI {
             errorManagement(exception);
         }
     }
+
+
+
 }
