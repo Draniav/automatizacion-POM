@@ -1,10 +1,12 @@
 # language: es
 Característica:  Registro
 
+
+
   Escenario: Registro exitoso
     Dado que el usuario navega hacia  Create and Account
     Cuando envia el  formulario con los datos correctos
-    Entonces vera un  mensaje de  : "Thank you for registering with Fake Online Clothing Store".
+    Entonces vera el  mensaje de  : "Thank you for registering with Fake Online Clothing Store".
 
 
   Escenario: Registro no exitoso
