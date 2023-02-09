@@ -14,7 +14,7 @@ import java.util.Collections;
 
 
 public class LoginPage extends CommunActions {
-    private LogInModel persona;
+
     private By msgError = By.xpath("//*[@id=\"email-error\"]");
     private By email = By.id("email");
     private By password = By.id("pass");
@@ -37,7 +37,6 @@ public class LoginPage extends CommunActions {
         scrollOn(webDriver.findElement(btnSignIn));
         clickOnElement(webDriver.findElement(btnSignIn));
     }
-
     public void signIn(String emailUser, String passwordUser) {
 
         typeOnTextField(webDriver.findElement(email), emailUser);
@@ -47,16 +46,6 @@ public class LoginPage extends CommunActions {
     }
 
 
-    private void generarPersona() {
-        Faker faker = new Faker();
-        persona = new LogInModel();
-
-        String password = faker.code().imei();
-        persona.setEmail(faker.animal().name() + "@" + faker.internet().domainName());
-        persona.setPassword(password);
-
-
-    }
 
 
     public Collection<Object> getUser() {
