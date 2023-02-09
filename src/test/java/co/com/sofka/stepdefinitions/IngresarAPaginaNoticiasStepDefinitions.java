@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Assertions;
 
 public class IngresarAPaginaNoticiasStepDefinitions extends WebUI {
 
-    private static final Logger LOGGER = Logger.getLogger(IngresarAPaginaNoticiasStepDefinitions.class);
 
     private static HomePage homePage;
     private static NewsPage newsPage;
