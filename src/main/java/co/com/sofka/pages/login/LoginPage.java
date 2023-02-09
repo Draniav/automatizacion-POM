@@ -37,6 +37,7 @@ public class LoginPage extends CommunActions {
         scrollOn(webDriver.findElement(btnSignIn));
         clickOnElement(webDriver.findElement(btnSignIn));
     }
+
     public void signIn(String emailUser, String passwordUser) {
 
         typeOnTextField(webDriver.findElement(email), emailUser);
@@ -44,6 +45,7 @@ public class LoginPage extends CommunActions {
         clicSignInBtn();
 
     }
+
 
     private void generarPersona() {
         Faker faker = new Faker();
