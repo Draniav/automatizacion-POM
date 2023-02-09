@@ -1,12 +1,11 @@
 package co.com.sofka.stepdefinitions;
 
-import co.com.sofka.pages.homepage.HomePage;
+import co.com.sofka.pages.home.HomePage;
 import co.com.sofka.pages.news.NewsPage;
 import co.com.sofka.setup.WebUI;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
-import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 
 public class IngresarAPaginaNoticiasStepDefinitions extends WebUI {
