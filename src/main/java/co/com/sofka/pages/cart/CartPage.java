@@ -11,9 +11,12 @@ import org.openqa.selenium.WebDriver;
 public class CartPage extends CommunActions {
 
 
-    private By remove = By.xpath("//*[@id=\"mini-cart\"]/li/div/div/div[2]/div[2]/a");
 
-    private By message = By.xpath("//*[@id=\"minicart-content-wrapper\"]/div[2]/strong");
+
+    private By removeConfirmationBtn = By.xpath("/html/body/div[4]/aside[2]/div[2]/footer/button[2]");
+
+    private By message = By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/p[1]");
+
 
 
 
@@ -24,11 +27,7 @@ public class CartPage extends CommunActions {
 
 
 
-    public void clicRemoveBtn() {
 
-        scrollOn(webDriver.findElement(remove));
-        clickOnElement(webDriver.findElement(remove));
-    }
 
     public String getMessage() {
 

@@ -19,10 +19,19 @@ public class HomePage extends CommunActions {
     private By cart = By.xpath("/html/body/div[2]/header/div[2]/div[1]/a");
 
     private By product = By.xpath(" //*[@id=\"maincontent\"]/div[3]/div/div[2]/div[3]/div/div/ol/li[5]/div/a/span/span/img");
-    //*[@id="maincontent"]/div[3]/div/div[2]/div[3]/div/div/ol/li[5]/div/div/div[3]/div/div[1]/form/button/span
+
     private By addProductBtn = By.xpath("  //*[@id=\"product-addtocart-button\"]/span");
 
     private By confirmationMessage = By.xpath("/html/body/div[2]/header/div[2]/div[1]/a/span[2]/span[1]");
+
+
+    private By editCart = By.xpath("//*[@id=\"minicart-content-wrapper\"]/div[2]/div[5]/div/a/span");
+
+    private By remove = By.xpath("//*[@id=\"shopping-cart-table\"]/tbody/tr[2]/td/div/a[2]");
+
+    private By message = By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/p[1]");
+
+
 
 
     public HomePage(WebDriver driver, Integer waitingTime) {
@@ -45,6 +54,23 @@ public class HomePage extends CommunActions {
         return new CartPage(webDriver, 10);
     }
 
+    public void clicRemoveBtn() {
+
+        scrollOn(webDriver.findElement(editCart));
+
+        clickOnElement(webDriver.findElement(editCart));
+
+        scrollOn(webDriver.findElement(remove));
+
+        clickOnElement(webDriver.findElement(remove));
+
+
+    }
+
+    public String getMessage() {
+
+        return getTextFromElement(webDriver.findElement(message));
+    }
 
     public void clicAddProduct() {
 

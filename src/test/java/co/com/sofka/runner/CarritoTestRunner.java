@@ -12,7 +12,8 @@ import org.junit.runner.RunWith;
         publish = true,
         features = {"src/test/resources/features/Carrito.feature"},
         glue = "co.com.sofka.stepdefinitions",
-        plugin = {"pretty", "html:target/cucumber-reports_Login.html"}
+        plugin = {"pretty", "html:target/cucumber-reports_Login.html"},
+        tags = "@test"
 )
 public class CarritoTestRunner  {
 

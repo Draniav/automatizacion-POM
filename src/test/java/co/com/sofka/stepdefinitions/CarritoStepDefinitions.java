@@ -15,7 +15,6 @@ public class CarritoStepDefinitions extends WebUI {
     private static HomePage homePage;
 
 
-
     @Dado("que el cliente en  la pagina principal")
     public void queElClienteEnLaPaginaPrincipal() {
         try {
@@ -48,7 +47,7 @@ public class CarritoStepDefinitions extends WebUI {
 
         try {
 
-            Assertions.assertEquals("1",homePage.getConfirmationMessage());
+            Assertions.assertEquals("1", homePage.getConfirmationMessage());
 
             quiteDriver();
 
@@ -57,31 +56,42 @@ public class CarritoStepDefinitions extends WebUI {
         }
 
 
-
-
     }
-
-
 
 
     @Cuando("abra la cartilla de productos")
     public void abraLaCartillaDeProductos() {
+
+        try {
+            Thread.sleep(3000);
+            homePage.openCart();
+
+
+        } catch (Exception exception) {
+            errorManagement(exception);
+        }
     }
 
     @Cuando("haga clic en  el  boton eliminar y confirmar")
     public void hagaClicEnElBotonEliminarYConfirmar() {
+
+        try {
+
+
+            homePage.clicRemoveBtn();
+            homePage.openCart();
+        } catch (Exception exception) {
+            errorManagement(exception);
+        }
     }
-
-
-
 
 
     @Entonces("vera el  mensaje en  la cartilla: {string}")
     public void veraElMensajeEnLaCartilla(String message) {
 
         try {
-            System.out.println(cartPage.getMessage());
-            Assertions.assertTrue(cartPage.getMessage().contains(message));
+            System.out.println(homePage.getMessage());
+            Assertions.assertTrue(homePage.getMessage().contains(message));
             quiteDriver();
         } catch (Exception exception) {
             errorManagement(exception);
