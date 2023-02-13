@@ -5,6 +5,7 @@ import co.com.sofka.pages.CommunActions;
 import co.com.sofka.pages.cart.CartPage;
 import co.com.sofka.pages.login.LoginPage;
 import co.com.sofka.pages.news.NewsPage;
+import co.com.sofka.pages.register.RegisterPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -31,7 +32,9 @@ public class HomePage extends CommunActions {
 
     private By message = By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/p[1]");
 
+    private By register = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[3]/a");
 
+    private By messageWelcome = By.xpath(" /html/body");
 
 
     public HomePage(WebDriver driver, Integer waitingTime) {
@@ -82,5 +85,16 @@ public class HomePage extends CommunActions {
 
     public String getConfirmationMessage() {
         return getTextFromElement(webDriver.findElement(confirmationMessage))+1;
+    }
+
+
+    public String getMessages() {
+
+        return getTextFromElement(webDriver.findElement(messageWelcome));
+    }
+
+    public RegisterPage openRegisterForm() {
+        clickOnElement(webDriver.findElement(register));
+        return new RegisterPage(webDriver, 10);
     }
 }

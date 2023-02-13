@@ -1,18 +1,16 @@
-package co.com.sofka.stepdefinitions;
+package co.com.sofka.definitions;
 
 import co.com.sofka.model.RegisterModel;
-import co.com.sofka.pages.homepage.HomePage;
-import co.com.sofka.pages.login.LoginPage;
-import co.com.sofka.pages.news.NewsPage;
+import co.com.sofka.pages.home.HomePage;
 import co.com.sofka.pages.register.RegisterPage;
 import co.com.sofka.setup.WebUI;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
-import io.cucumber.java.es.Y;
 import org.junit.jupiter.api.Assertions;
 
-public class RegistroStepDefinitions extends WebUI {
+
+public class RegistroDefinitions extends WebUI {
 
     private static HomePage homePage;
     private static RegisterPage registerPage;

@@ -1,4 +1,4 @@
-package co.com.sofka.stepdefinitions;
+package co.com.sofka.definitions;
 
 
 import co.com.sofka.pages.home.HomePage;
@@ -10,7 +10,7 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.junit.jupiter.api.Assertions;
 
-public class LoginStepDefinitions extends WebUI {
+public class LoginDefinitions extends WebUI {
 
 
     private static HomePage homePage;

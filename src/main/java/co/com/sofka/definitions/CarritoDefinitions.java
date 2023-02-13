@@ -1,15 +1,14 @@
-package co.com.sofka.stepdefinitions;
+package co.com.sofka.definitions;
 
 import co.com.sofka.pages.cart.CartPage;
 import co.com.sofka.pages.home.HomePage;
-import co.com.sofka.pages.news.NewsPage;
 import co.com.sofka.setup.WebUI;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import org.junit.jupiter.api.Assertions;
 
-public class CarritoStepDefinitions extends WebUI {
+public class CarritoDefinitions extends WebUI {
 
     private static CartPage cartPage;
     private static HomePage homePage;
@@ -57,6 +56,9 @@ public class CarritoStepDefinitions extends WebUI {
 
 
     }
+
+
+
 
 
     @Cuando("abra la cartilla de productos")

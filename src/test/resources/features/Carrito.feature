@@ -9,6 +9,7 @@ Característica:  carrito de compras
     Cuando seleccione de la seccion Hot Sellers   un  articulo
     Entonces podra ver un  mensaje de confirmacion
 
+
   Escenario:Eliminar elementos del carrito de compras
     Dado que el cliente en  la pagina principal
     Cuando seleccione de la seccion Hot Sellers   un  articulo

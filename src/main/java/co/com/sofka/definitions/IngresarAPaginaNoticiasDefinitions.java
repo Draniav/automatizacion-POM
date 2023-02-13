@@ -1,4 +1,4 @@
-package co.com.sofka.stepdefinitions;
+package co.com.sofka.definitions;
 
 import co.com.sofka.pages.home.HomePage;
 import co.com.sofka.pages.news.NewsPage;
@@ -8,7 +8,7 @@ import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import org.junit.jupiter.api.Assertions;
 
-public class IngresarAPaginaNoticiasStepDefinitions extends WebUI {
+public class IngresarAPaginaNoticiasDefinitions extends WebUI {
 
 
     private static HomePage homePage;
