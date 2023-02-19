@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
@@ -101,6 +102,10 @@ public class CommunActions {
         } catch (Exception e) {
             LOGGER.warn(e.getMessage(), e);
         }
+    }
+
+    protected List<WebElement> elements(By locator){
+        return webDriver.findElements(locator);
     }
 
     protected WebElement waitElement(By locator){
