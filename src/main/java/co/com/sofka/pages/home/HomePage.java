@@ -3,6 +3,7 @@ package co.com.sofka.pages.home;
 
 import co.com.sofka.pages.CommunActions;
 import co.com.sofka.pages.cart.CartPage;
+import co.com.sofka.pages.fitness.FitnessPage;
 import co.com.sofka.pages.login.LoginPage;
 import co.com.sofka.pages.news.NewsPage;
 import co.com.sofka.pages.register.RegisterPage;
@@ -35,6 +36,10 @@ public class HomePage extends CommunActions {
     private By register = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[3]/a");
 
     private By messageWelcome = By.xpath(" /html/body");
+
+    private By gearBtn = By.xpath("//*[@id=\"ui-id-6\"]/span[2]");
+
+    private By fitnessEquipment = By.xpath("//a[contains(text(), 'Fitness Equipment')]");
 
 
     public HomePage(WebDriver driver, Integer waitingTime) {
@@ -97,4 +102,15 @@ public class HomePage extends CommunActions {
         clickOnElement(webDriver.findElement(register));
         return new RegisterPage(webDriver, 10);
     }
+
+
+    public FitnessPage openFitnessPage(){
+
+        scrollOn(webDriver.findElement(gearBtn));
+        clickOnElement(webDriver.findElement(gearBtn));
+        scrollOn(webDriver.findElement(fitnessEquipment));
+        clickOnElement(webDriver.findElement(fitnessEquipment));
+        return new FitnessPage(webDriver, 10);
+    }
+
 }
