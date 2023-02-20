@@ -5,8 +5,10 @@ import co.com.sofka.pages.CommunActions;
 import co.com.sofka.pages.cart.CartPage;
 import co.com.sofka.pages.fitness.FitnessPage;
 import co.com.sofka.pages.login.LoginPage;
+import co.com.sofka.pages.men.MenPage;
 import co.com.sofka.pages.news.NewsPage;
 import co.com.sofka.pages.register.RegisterPage;
+import co.com.sofka.pages.women.WomenPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -40,6 +42,11 @@ public class HomePage extends CommunActions {
     private By gearBtn = By.xpath("//*[@id=\"ui-id-6\"]/span[2]");
 
     private By fitnessEquipment = By.xpath("//a[contains(text(), 'Fitness Equipment')]");
+
+    private By men = By.xpath("//*[@id=\"ui-id-5\"]/span[2]");
+
+    private By women = By.xpath("//*[@id=\"ui-id-4\"]/span[2]");
+
 
 
     public HomePage(WebDriver driver, Integer waitingTime) {
@@ -89,7 +96,7 @@ public class HomePage extends CommunActions {
     }
 
     public String getConfirmationMessage() {
-        return getTextFromElement(webDriver.findElement(confirmationMessage))+1;
+        return getTextFromElement(webDriver.findElement(confirmationMessage)) + 1;
     }
 
 
@@ -104,7 +111,7 @@ public class HomePage extends CommunActions {
     }
 
 
-    public FitnessPage openFitnessPage(){
+    public FitnessPage openFitnessPage() {
 
         scrollOn(webDriver.findElement(gearBtn));
         clickOnElement(webDriver.findElement(gearBtn));
@@ -112,5 +119,20 @@ public class HomePage extends CommunActions {
         clickOnElement(webDriver.findElement(fitnessEquipment));
         return new FitnessPage(webDriver, 10);
     }
+
+    public MenPage openMenPage() {
+        scrollOn(webDriver.findElement(men));
+        clickOnElement(webDriver.findElement(men));
+        return new MenPage(webDriver, 10);
+    }
+
+    public WomenPage openWomenPage() {
+        scrollOn(webDriver.findElement(women));
+        clickOnElement(webDriver.findElement(women));
+        return new WomenPage(webDriver, 10);
+
+
+    }
+
 
 }
