@@ -20,6 +20,7 @@ public class WebUI {
     private static final String DEMO_QA_URL = "https://magento.softwaretestingboard.com/";
 
     private static final Logger LOGGER = Logger.getLogger(WebUI.class);
+
     protected WebDriver driver;
 
     private void setUpWebdriver(){

@@ -74,7 +74,7 @@ public class LoginDefinitions extends WebUI {
 
 
     @Y("envie el formulario :  {string} y la contraseña: {string}")
-    public void envieElFormularioYLaContraseña(String email, String password) {
+    public void envieElFormularioYLaContrasena(String email, String password) {
         try {
             loginPage = homePage.openSignInForm();
             loginPage.signIn(email, password);
